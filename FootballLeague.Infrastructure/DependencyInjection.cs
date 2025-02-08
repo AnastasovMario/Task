@@ -1,6 +1,4 @@
-﻿
-
-namespace FootballLeague.Infrastructure
+﻿namespace FootballLeague.Infrastructure
 {
   public static class DependencyInjection
   {
@@ -8,7 +6,7 @@ namespace FootballLeague.Infrastructure
       (this IServiceCollection services, IConfiguration configuration)
     {
       var connectionString = configuration.GetConnectionString("Database");
-      //Add Services to the container
+
       services.AddDbContext<ApplicationDbContext>((sp, options) =>
       {
         options.UseSqlServer(connectionString);

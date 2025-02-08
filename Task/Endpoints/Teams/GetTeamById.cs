@@ -1,9 +1,8 @@
-﻿using FootballLeague.Application.Dtos;
-using FootballLeague.Application.Teams.Queries.GetTeambyId;
+﻿using FootballLeague.Application.Teams.Queries.GetTeambyId;
 
-namespace FootballLeague.API.Endpoints.Matches
+namespace FootballLeague.API.Endpoints.Teams
 {
-  public record GetTeamByIdResponse(IEnumerable<TeamDto> Teams);
+  public record GetTeamByIdResponse(List<TeamDto> Teams);
 
   public class GetTeamById : ICarterModule
   {

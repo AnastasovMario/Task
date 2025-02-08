@@ -1,8 +1,8 @@
 ﻿namespace FootballLeague.Infrastructure.Data.Configurations
 {
-  public class MatchConfiguration : IEntityTypeConfiguration<Match>
+  public class MatchConfiguration : IEntityTypeConfiguration<FootballMatch>
   {
-    public void Configure(EntityTypeBuilder<Match> builder)
+    public void Configure(EntityTypeBuilder<FootballMatch> builder)
     {
       builder.HasKey(m => m.Id);
       builder.Property(m => m.DatePlayed)

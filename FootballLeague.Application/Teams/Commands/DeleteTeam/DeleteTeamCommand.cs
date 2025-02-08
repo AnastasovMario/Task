@@ -1,12 +1,8 @@
-﻿using BuildingBlocks.CQRS;
-using FluentValidation;
-using System.Windows.Input;
-
-namespace FootballLeague.Application.Teams.Commands.DeleteTeam
+﻿namespace FootballLeague.Application.Teams.Commands.DeleteTeam
 {
   public record DeleteTeamCommand(int Id) : ICommand<DeleteTeamResult>;
 
-  public record DeleteTeamResult(bool isSucess);
+  public record DeleteTeamResult(bool IsSucess);
 
   public class DeleteCommandValidator : AbstractValidator<DeleteTeamCommand>
   {

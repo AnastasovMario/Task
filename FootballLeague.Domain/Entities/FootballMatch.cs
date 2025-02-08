@@ -2,7 +2,7 @@
 
 namespace FootballLeague.Domain.Entities
 {
-  public class Match : Entity<Match>
+  public class FootballMatch : Entity
   {
     public int HomeTeamId { get; set; }
     public int AwayTeamId { get; set; }

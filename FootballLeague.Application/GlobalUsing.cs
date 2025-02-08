@@ -1,0 +1,12 @@
+﻿global using FootballLeague.Domain.Entities;
+global using Microsoft.EntityFrameworkCore;
+global using BuildingBlocks.Exceptions;
+global using BuildingBlocks.CQRS;
+global using FluentValidation;
+global using FootballLeague.Application.Data;
+global using FootballLeague.Application.Dtos;
+global using FootballLeague.Application.Exceptions;
+global using BuildingBlocks.Behaviours;
+global using Microsoft.Extensions.Configuration;
+global using Microsoft.Extensions.DependencyInjection;
+global using System.Reflection;

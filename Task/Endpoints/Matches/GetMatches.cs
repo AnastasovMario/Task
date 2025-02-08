@@ -1,9 +1,8 @@
-﻿using FootballLeague.Application.Dtos;
-using FootballLeague.Application.Matches.Queries.GetAllMatches;
+﻿using FootballLeague.Application.Matches.Queries.GetAllMatches;
 
 namespace FootballLeague.API.Endpoints.Matches
 {
-  public record GetMatchesResponse(List<MatchDto> Matches);
+  public record GetMatchesResponse(List<FootballMatchDto> Matches);
   public class GetMatches : ICarterModule
   {
     public void AddRoutes(IEndpointRouteBuilder app)

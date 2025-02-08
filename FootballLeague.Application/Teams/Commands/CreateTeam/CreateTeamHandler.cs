@@ -1,8 +1,4 @@
-﻿using BuildingBlocks.CQRS;
-using FootballLeague.Application.Data;
-using FootballLeague.Domain.Entities;
-
-namespace FootballLeague.Application.Teams.Commands.CreateTeam
+﻿namespace FootballLeague.Application.Teams.Commands.CreateTeam
 {
   public class CreateTeamHandler(IApplicationDbContext dbContext)
       : ICommandHandler<CreateTeamCommand, CreateTeamResult>

@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.EntityFrameworkCore;
 
 namespace FootballLeague.Infrastructure.Data.Extensions
 {

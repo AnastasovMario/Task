@@ -10,13 +10,13 @@
             new Team { Name = "Team D", Points = 1, MatchesPlayed = 1, Wins = 0, Draws = 1, Losses = 0 }
         };
 
-    public static List<Match> Matches => new()
+    public static List<FootballMatch> Matches => new()
         {
-            new Match
+            new FootballMatch
             {
                 HomeTeamId = 1, AwayTeamId = 2, HomeScore = 1, AwayScore = 2, DatePlayed = DateTime.UtcNow
             },
-            new Match
+            new FootballMatch
             {
                 HomeTeamId = 3, AwayTeamId = 4, HomeScore = 3, AwayScore = 3, DatePlayed = DateTime.UtcNow
             }

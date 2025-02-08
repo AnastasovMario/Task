@@ -1,9 +1,4 @@
-﻿using BuildingBlocks.Behaviours;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using System.Reflection;
-
-namespace FootballLeague.Application
+﻿namespace FootballLeague.Application
 {
   public static class DependencyInjection
   {

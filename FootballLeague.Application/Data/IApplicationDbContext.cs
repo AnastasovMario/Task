@@ -1,12 +1,9 @@
-﻿using FootballLeague.Domain.Entities;
-using Microsoft.EntityFrameworkCore;
-
-namespace FootballLeague.Application.Data
+﻿namespace FootballLeague.Application.Data
 {
   public interface IApplicationDbContext
   {
     DbSet<Team> Teams { get; set; }
-    DbSet<Match> Matches { get; set; }
+    DbSet<FootballMatch> Matches { get; set; }
 
     Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 

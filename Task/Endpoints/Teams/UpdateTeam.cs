@@ -1,7 +1,6 @@
-﻿using FootballLeague.Application.Dtos;
-using FootballLeague.Application.Teams.Commands.UpdateTeam;
+﻿using FootballLeague.Application.Teams.Commands.UpdateTeam;
 
-namespace FootballLeague.API.Endpoints.Matches
+namespace FootballLeague.API.Endpoints.Teams
 {
   public record UpdateTeamRequest(TeamDto Team);
   public record UpdateTeamResponse(bool IsSuccess);

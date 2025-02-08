@@ -1,6 +1,6 @@
 ﻿namespace BuildingBlocks.Exceptions
 {
-  internal class BadRequestException : Exception
+  public class BadRequestException : Exception
   {
     public BadRequestException(string message) : base(message)
     {

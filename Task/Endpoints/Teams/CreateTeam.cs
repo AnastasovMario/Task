@@ -1,9 +1,8 @@
-﻿using FootballLeague.Application.Dtos;
-using FootballLeague.Application.Teams.Commands.CreateTeam;
+﻿using FootballLeague.Application.Teams.Commands.CreateTeam;
 
-namespace FootballLeague.API.Endpoints.Matches
+namespace FootballLeague.API.Endpoints.Teams
 {
-  public record CreateTeamRequest(TeamDto Team);
+  public record CreateTeamRequest(string Name);
   public record CreateTeamResponse(int Id);
 
   public class CreateTeam : ICarterModule

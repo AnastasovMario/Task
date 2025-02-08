@@ -6,18 +6,16 @@ namespace BuildingBlocks.Behaviours
 {
   public class ValidationBehavior<TRequest, TResponse>
       (IEnumerable<IValidator<TRequest>> validators)
-      : IPipelineBehavior<TRequest, TResponse> //checks for all the validation errors in the upcoming request
+      : IPipelineBehavior<TRequest, TResponse> 
       where TRequest : ICommand<TResponse>
   {
     public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
     {
       var context = new ValidationContext<TRequest>(request);
 
-      //Checks for validation errors and completes when all the validators are ran through
       var validationResults =
           await Task.WhenAll(validators.Select(v => v.ValidateAsync(context, cancellationToken)));
 
-      //we get the errors
       var failures =
           validationResults
           .Where(r => r.Errors.Any())
@@ -29,8 +27,7 @@ namespace BuildingBlocks.Behaviours
         throw new ValidationException(failures);
       }
 
-      return await next(); // very crucial for continuing the pipeline
+      return await next(); 
     }
   }
-
 }

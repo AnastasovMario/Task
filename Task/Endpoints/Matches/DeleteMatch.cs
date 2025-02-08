@@ -2,7 +2,7 @@
 
 namespace FootballLeague.API.Endpoints.Matches
 {
-  public record DeleteMatchResponse(bool isSuccess);
+  public record DeleteMatchResponse(bool IsSuccess);
   public class DeleteMatch : ICarterModule
   {
     public void AddRoutes(IEndpointRouteBuilder app)

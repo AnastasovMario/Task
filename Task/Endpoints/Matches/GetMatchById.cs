@@ -1,9 +1,8 @@
-﻿using FootballLeague.Application.Dtos;
-using FootballLeague.Application.Matches.Queries.GetMatchById;
+﻿using FootballLeague.Application.Matches.Queries.GetMatchById;
 
 namespace FootballLeague.API.Endpoints.Matches
 {
-  public record GetMatchByIdResponse(MatchDto Match);
+  public record GetMatchByIdResponse(FootballMatchDto Match);
 
   public class GetMatchById : ICarterModule
   {
@@ -18,7 +17,7 @@ namespace FootballLeague.API.Endpoints.Matches
         return Results.Ok(response);
       })
       .WithName("GetMatchById")
-      .Produces<GetTeamByIdResponse>(StatusCodes.Status200OK)
+      .Produces<GetMatchByIdResponse>(StatusCodes.Status200OK)
       .ProducesProblem(StatusCodes.Status400BadRequest)
       .ProducesProblem(StatusCodes.Status404NotFound)
       .WithSummary("Get Match By Id")

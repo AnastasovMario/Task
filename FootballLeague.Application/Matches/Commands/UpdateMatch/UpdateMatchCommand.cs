@@ -1,12 +1,8 @@
-﻿using BuildingBlocks.CQRS;
-using FluentValidation;
-using FootballLeague.Application.Dtos;
-
-namespace FootballLeague.Application.Matches.Commands.UpdateMatch
+﻿namespace FootballLeague.Application.Matches.Commands.UpdateMatch
 {
-  public record UpdateMatchCommand(int Id, MatchDto Match) : ICommand<UpdateMatchResult>;
+  public record UpdateMatchCommand(int Id, FootballMatch Match) : ICommand<UpdateMatchResult>;
 
-  public record UpdateMatchResult(bool isSuccess);
+  public record UpdateMatchResult(bool IsSuccess);
 
   public class UpdateMatchCommandValidator : AbstractValidator<UpdateMatchCommand>
   {

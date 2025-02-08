@@ -1,9 +1,4 @@
-﻿using BuildingBlocks.CQRS;
-using FootballLeague.Application.Data;
-using FootballLeague.Application.Dtos;
-using Microsoft.EntityFrameworkCore;
-
-namespace FootballLeague.Application.Teams.Queries.GetTeams
+﻿namespace FootballLeague.Application.Teams.Queries.GetTeams
 {
   public class GetAllTeamsHandler(IApplicationDbContext dbContext)
       : IQueryHandler<GetAllTeamsQuery, GetTeamsResult>

@@ -1,27 +1,23 @@
-﻿using BuildingBlocks.CQRS;
-using FootballLeague.Application.Data;
-using FootballLeague.Domain.Entities;
-
+﻿
 namespace FootballLeague.Application.Matches.Commands.CreateMatch
 {
-    public class CreateMatchHandler(IApplicationDbContext dbContext)
+  public class CreateMatchHandler(IApplicationDbContext dbContext)
     : ICommandHandler<CreateMatchCommand, CreateMatchResult>
     {
         public async Task<CreateMatchResult> Handle(CreateMatchCommand command, CancellationToken cancellationToken)
         {
-            var homeTeam = await dbContext.Teams.FindAsync(command.Match.HomeTeamId);
-            var awayTeam = await dbContext.Teams.FindAsync(command.Match.AwayTeamId);
+            var homeTeam = await dbContext.Teams.FirstOrDefaultAsync(m => m.Id == command.HomeTeamId, cancellationToken);
+            var awayTeam = await dbContext.Teams.FirstOrDefaultAsync(m => m.Id == command.AwayTeamId, cancellationToken);
 
-            var match = new Match
+            var match = new FootballMatch
             {
-                HomeTeamId = command.Match.HomeTeamId,
-                AwayTeamId = command.Match.AwayTeamId,
-                HomeScore = command.Match.HomeScore,
-                AwayScore = command.Match.AwayScore,
-                DatePlayed = command.Match.DatePlayed
+                HomeTeamId = command.HomeTeamId,
+                AwayTeamId = command.AwayTeamId,
+                HomeScore = command.HomeScore,
+                AwayScore = command.AwayScore,
+                DatePlayed = command.DatePlayed
             };
 
-            // Update Team Statistics
             UpdateTeamStats(homeTeam, awayTeam, match.HomeScore, match.AwayScore);
 
             dbContext.Matches.Add(match);

@@ -1,7 +1,6 @@
-﻿
-namespace FootballLeague.Domain.Abstraction
+﻿namespace FootballLeague.Domain.Abstraction
 {
-  public abstract class Entity<T> : IEntity<T>
+  public abstract class Entity : IEntity
   {
     public int Id { get; set; }
     public DateTime? CreatedAt { get; set; }

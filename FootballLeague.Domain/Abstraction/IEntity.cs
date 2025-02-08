@@ -1,12 +1,9 @@
 ﻿namespace FootballLeague.Domain.Abstraction
 {
-  public interface IEntity<T> : IEntity
-  {
-    public int Id { get; set; }
-  }
-
   public interface IEntity
   {
+    public int Id { get; set; }
+
     public DateTime? CreatedAt { get; set; }
     public string? CreatedBy { get; set; }
     public DateTime? LastModified { get; set; }

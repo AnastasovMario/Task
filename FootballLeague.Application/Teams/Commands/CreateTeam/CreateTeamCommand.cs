@@ -1,8 +1,4 @@
-﻿using BuildingBlocks.CQRS;
-using FluentValidation;
-using FootballLeague.Application.Dtos;
-
-namespace FootballLeague.Application.Teams.Commands.CreateTeam
+﻿namespace FootballLeague.Application.Teams.Commands.CreateTeam
 {
   public record CreateTeamCommand(TeamDto Team) : ICommand<CreateTeamResult>;
 

@@ -10,9 +10,9 @@ namespace FootballLeague.API
     {
       services.AddCarter();
 
-      services.AddExceptionHandler<CustomExceptionHandler>(); //1
-      //services.AddHealthChecks()
-      //  .AddSqlServer(configuration.GetConnectionString("Database")!);
+      services.AddExceptionHandler<CustomExceptionHandler>();
+      services.AddHealthChecks()
+        .AddSqlServer(configuration.GetConnectionString("Database")!);
 
       return services;
     }
@@ -21,12 +21,12 @@ namespace FootballLeague.API
     {
       app.MapCarter();
 
-      app.UseExceptionHandler(options => { }); //2
-      //app.UseHealthChecks("/health",
-      //  new HealthCheckOptions
-      //  {
-      //    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
-      //  });
+      app.UseExceptionHandler(options => { });
+      app.UseHealthChecks("/health",
+        new HealthCheckOptions
+        {
+          ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+        });
 
       return app;
     }
